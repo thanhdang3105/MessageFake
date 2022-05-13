@@ -1,0 +1,39 @@
+@media (max-width: 575px){
+    
+}
+@media (max-width: 768px){
+
+    .Col_slidebar{
+        display: block;
+        position: absolute;
+        background-color: rgb(252, 252, 252);
+        transition: all 0.5s linear;
+        z-index: 1;
+        transform: translateX(-100%);
+        &.show{
+            transform: translateX(0);
+        }
+    }
+    .unshow_slidebar{
+        position: absolute;
+        top: 50%;
+        right: 0;
+    }
+    
+}
+@media (min-width: 768px){
+    .mobileSlider{
+        display: none;
+    }
+    .Sildebar .Sildebar_user .wrapper_slideBar .user_info .username{
+        display: none;
+    }
+}
+@media (min-width: 992px){
+    .Sildebar .Sildebar_user .wrapper_slideBar .user_info .username{
+        display: unset;
+    }
+}
+@media (min-width: 1200px){
+
+}

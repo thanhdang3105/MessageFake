@@ -1,0 +1,260 @@
+.text_black{
+    color: rgb(0, 0, 0);
+}
+
+.Sildebar {
+    background: rgba(231, 231, 231, 0.5);
+    height: 100vh;
+
+    .Sildebar_user {
+        height: 10vh;
+
+        .wrapper_slideBar {
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 16px;
+            border-bottom: 1px solid #555;
+            .user_info{
+                display: flex;
+                align-items:center;
+                .username {
+                    margin-left: 5px;
+                    font-weight: bold;
+                }
+            }
+
+            .btn_logout{
+                color: black;
+                border-color: black;
+                &:hover {
+                    color: #999;
+                    border-color: #999;
+                }
+            }
+            
+        }
+    }
+
+    .Sildebar_room {
+        height: 90vh;
+
+        .div_collapse {
+            height: 100%;
+        }
+
+        .div_panel {
+            height: 100%;
+
+            .ant-collapse-header,
+            p {
+                color: black;
+            }
+
+            .ant-collapse-content {
+                height: 93%;
+
+                .ant-collapse-content-box {
+                    padding: 0 40px;
+                    height: 100%;
+
+                    .list_room {
+                        height: fit-content;
+                        max-height: 95%;
+                        overflow-y: auto;
+                        &::-webkit-scrollbar{
+                            width: 1px;
+                            background-color: transparent;
+                        }
+
+                        .link_room {
+                            display: block;
+                            margin-bottom: 5px;
+                            color: black;
+
+                            &:hover {
+                                color: #999;
+                            }
+                        }
+                    }
+
+                    .add_room {
+                        color: black;
+                        padding: 0;
+
+                        &:hover,
+                        &:focus,
+                        &:active {
+                            color: #999;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.chatWindow {
+    .header_chat {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #555;
+        padding: 12px 16px;
+        height: 10vh;
+        background-color: rgba(255, 255, 255, 0.5);
+
+        .header_info{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            .name_header {
+                .header_title {
+                    margin: 0;
+                    font-size: 20px;
+                    font-weight: bold;
+                    display: flex;
+                    align-items: center;
+                }
+    
+                .header_description {
+                    color: #666;
+                    font-size: 10px;
+                }
+            }
+        }
+
+        .control_header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            .button_addUser {
+                color: #555;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    color: black;
+                    border-color: black;
+                }
+            }
+        }
+    }
+
+    .content_chat {
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 1px 11px 5px;
+        gap: 5px;
+
+        .list_message {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            max-height: 100%;
+            height: fit-content;
+            overflow: auto;
+            &::-webkit-scrollbar{
+                background-color: transparent;
+                width: 1px;
+            }
+
+            .item_message {
+                display: flex;
+
+                &.me {
+                    justify-content: flex-end;
+                    align-items: flex-end;
+                    .message{
+                        justify-content: flex-end;
+                    }
+                }
+
+                .message {
+                    margin-bottom: 10px;
+                    display: flex;
+                    align-items: flex-end;
+                    gap: 15px;
+                    width: 50%;
+                    height: fit-content;
+
+                    .message_box {
+                        max-width: 80%;
+                        .message_user {
+
+                            .name_user {
+                                font-weight: bold;
+                                font-size: 16px;
+                            }
+
+                            .message_createdAt {
+                                font-size: 10px;
+                                margin-left: 5px;
+                                color: #494949;
+                            }
+                        }
+
+                        .message_text {
+                            background-color: #999;
+                            padding: 10px;
+                            border-radius: 35px;
+                            max-width: 100%;
+                            width: fit-content;
+                            .content_message {
+                                color: white;
+                                width: 100%;
+                                word-wrap: break-word;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .form_submit {
+            max-height: 20%;
+            .input_form {
+                flex: 1;
+                height: 100%;
+                textarea{
+                    overflow: auto;
+                    &::-webkit-scrollbar{
+                        background-color: transparent;
+                        width: 1px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// Modal setting Room
+
+.setBackground_group{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    padding: 0;
+    list-style: none;
+    .setBackground_imageBox{
+        display: inline-block;
+        width: 150px;
+        height: 100px;
+        .ant-image{
+            width: 100%;
+            height: 100%;
+            .setBackground_image{
+                width: 100%;
+                height: 100%;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
