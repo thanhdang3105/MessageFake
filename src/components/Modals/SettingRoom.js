@@ -6,7 +6,7 @@ import { db } from '../../firebase/config'
 import { imageFiles } from '../../hooks/readFile'
 
 
-export function SettingRoom({setBackgroundURL}) {
+export function SettingRoom() {
     const { isSettingRoom, setIsSettingRoom, selectedRoomId } = React.useContext(AppContext)
     const user = React.useContext(AuthContext)
 
@@ -52,7 +52,7 @@ export function SettingRoom({setBackgroundURL}) {
                     <ul className='setBackground_group'>
                         {imageFiles.map((img,index) => (
                             <li key={index} className="setBackground_imageBox">
-                                <Image className='setBackground_image' onClick={() => handleSetBackground(img)} preview={false} src={`/img/${img}`}/>
+                                <Image className='setBackground_image' onClick={() => handleSetBackground(img)} preview={false} src={`${process.env.PUBLIC_URL}/img/${img}`}/>
                             </li>
                         ))}
                     </ul>

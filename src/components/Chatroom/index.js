@@ -15,7 +15,7 @@ function ChatRoom() {
   
     useEffect(() => {
       const app = appRef.current
-          app.style.backgroundImage = `url('/img/${selectedRoomId.backgroundURL}')`
+          app.style.backgroundImage = `url('${process.env.PUBLIC_URL}/img/${selectedRoomId.backgroundURL}')`
     }, [selectedRoomId])
     return (
         <>

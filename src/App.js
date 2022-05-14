@@ -9,11 +9,11 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename="/MessageFake">
       <AuthProvider>
         <AppProvider>
           <Routes>
-              <Route path="/" element={<ChatRoom />} />
+              <Route path="/*" element={<ChatRoom />} />
               <Route path="/login" element={<Login />} />
           </Routes>
         </AppProvider>
