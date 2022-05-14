@@ -2,7 +2,7 @@
   "name": "messenger",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://thanhdang3105.github.io/MessageFake",
+  "homepage": "https://thanhdang3105.github.io",
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@testing-library/jest-dom": "^5.16.4",
