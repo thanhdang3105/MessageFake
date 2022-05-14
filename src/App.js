@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter basename='/'>
+      <HashRouter basename='/'>
       <AuthProvider>
         <AppProvider>
           <Routes>
@@ -18,7 +18,7 @@ function App() {
           </Routes>
         </AppProvider>
       </AuthProvider>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
