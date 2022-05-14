@@ -1,6 +1,6 @@
 import Login from './components/Login';
 import ChatRoom from './components/Chatroom';
-import { Route, Routes, BrowserRouter } from 'react-router-dom'
+import { Route, Routes, BrowserRouter, HashRouter } from 'react-router-dom'
 import AuthProvider from './context/AuthProvider';
 import AppProvider from './context/AppProvider';
 import './App.css'
