@@ -44,8 +44,6 @@ export function SettingRoom({setBackgroundURL}) {
         db.updateDoc(roomRef,{
             backgroundURL: img
         })
-        setValue([])
-        setIsInviteMember(false)
     }
   return (
     <div>
