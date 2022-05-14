@@ -40,40 +40,12 @@ export function SettingRoom({setBackgroundURL}) {
     }
 
     const handleSetBackground = (img) => {
-        if(window.localStorage.backgroundURL){
-            const backgroundLocal = JSON.parse(window.localStorage.backgroundURL)
-            const check = backgroundLocal.filter((item,index) => {
-                if(item.roomId === selectedRoomId.id){
-                    backgroundLocal[index] = {
-                        roomId: selectedRoomId.id,
-                        url: img
-                    }
-                    window.localStorage.backgroundURL = JSON.stringify(backgroundLocal)
-                    setBackgroundURL(backgroundLocal)
-                }
-                return item.roomId === selectedRoomId.id
-            })
-            
-            if(!check.length) {
-                const newData = [...JSON.parse(localStorage.backgroundURL),{
-                    roomId: selectedRoomId.id,
-                    url: img
-                }]
-                setBackgroundURL(newData)
-                window.localStorage.backgroundURL = JSON.stringify(newData)
-            }
-        }
-        else{
-            window.localStorage.backgroundURL = JSON.stringify([{
-                roomId: selectedRoomId.id,
-                url: img
-            }])
-            setBackgroundURL({
-                roomId: selectedRoomId.id,
-                url: img
-            })
-        }
-        
+        const roomRef = db.doc(db.collection(db.getFirestore(),'rooms'),selectedRoomId.id)
+        db.updateDoc(roomRef,{
+            backgroundURL: img
+        })
+        setValue([])
+        setIsInviteMember(false)
     }
   return (
     <div>

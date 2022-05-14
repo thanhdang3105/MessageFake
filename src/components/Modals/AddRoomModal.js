@@ -10,7 +10,7 @@ export default function AddRoomModal() {
     const user = React.useContext(AuthContext)
 
     const handleOk = () => {
-        addDocument('rooms',{...form.getFieldValue(), members: [user.uid]})
+        addDocument('rooms',{...form.getFieldValue(), backgroundURL: '', members: [user.uid]})
         form.resetFields()
         setIsAddRoom(false)
     }

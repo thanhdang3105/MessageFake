@@ -6,12 +6,6 @@ import { useContext, useEffect, useRef, useState } from 'react'
 import { SettingRoom } from '../Modals/SettingRoom'
 
 function ChatRoom() {
-    const [backgroundURL, setBackgroundURL] = useState(() => {
-        if(localStorage.backgroundURL){
-            return JSON.parse(window.localStorage.backgroundURL)
-        }
-        return ''
-    })
 
     const [isVisibleSlideMoblie,setIsVisibleSlideMoblie] = useState(false)
     
@@ -21,17 +15,11 @@ function ChatRoom() {
   
     useEffect(() => {
       const app = appRef.current
-      const check = backgroundURL.find(item => item.roomId === selectedRoomId.id)
-      if(check){
-          app.style.backgroundImage = `url('/img/${check.url}')`
-      }
-      else{
-        app.style.backgroundImage = `unset`
-      }
-    }, [backgroundURL,selectedRoomId])
+          app.style.backgroundImage = `url('/img/${selectedRoomId.backgroundURL}')`
+    }, [selectedRoomId])
     return (
         <>
-            <SettingRoom setBackgroundURL={setBackgroundURL} />
+            <SettingRoom />
             <Row ref={appRef} className='App_row'>
                 <Col xs={0} sm={0} md={5} xl={5} className={`Col_slidebar ${isVisibleSlideMoblie && 'show'}`}><Sildebar 
                 showSlideBar={{isVisibleSlideMoblie,setIsVisibleSlideMoblie}}/></Col>
