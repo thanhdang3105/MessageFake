@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter basename='/MessageFake' hashType>
+      <BrowserRouter basename='/' hashType>
       <AuthProvider>
         <AppProvider>
           <Routes>
