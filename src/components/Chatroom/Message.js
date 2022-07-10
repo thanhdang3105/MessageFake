@@ -17,16 +17,17 @@ function Message({ text, displayName, createdAt, photoUrl }) {
   
   return (
     <div className="message">
-        <div className="message_avatar">
-          <Avatar className="avatar_user" src={photoUrl} alt={displayName}>{photoUrl ? '' : displayName?.charAt(0)?.toUpperCase()}</Avatar>
-        </div>
+        
         <div className="message_box">
           <div className="message_user">
               <Typography.Text className='name_user'>{displayName}</Typography.Text>
               <Typography.Text className='message_createdAt'>{formatDate(createdAt?.seconds)}</Typography.Text>
           </div>
-          <div className="message_text">
-              <Typography.Text className='content_message'>{text}</Typography.Text>
+          <div className="message_wrapperText">
+            <Avatar className="avatar_user" src={photoUrl} alt={displayName}>{photoUrl ? '' : displayName?.charAt(0)?.toUpperCase()}</Avatar>
+            <div className="message_text">
+                <Typography.Text className='content_message'>{text}</Typography.Text>
+            </div>
           </div>
         </div>
     </div>

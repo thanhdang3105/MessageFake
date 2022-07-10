@@ -5,7 +5,19 @@
 .Sildebar {
     background: rgba(231, 231, 231, 0.5);
     height: 100vh;
-
+    .mobileSlider{
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateX(100%) translateY(-50%) translateX(-30%);
+        transition: all 0.2s linear;
+        border-bottom-right-radius: 99px;
+        border-top-right-radius: 99px;
+        color: black;
+        &:hover{
+            background-color: rgba(231, 231, 231, 0.8);
+        }
+    }
     .Sildebar_user {
         height: 10vh;
 
@@ -38,8 +50,23 @@
     }
 
     .Sildebar_room {
-        height: 90vh;
-
+        height: fit-content;
+        max-height: 90vh;
+        overflow-y: auto;
+        .box_input-search{
+            padding: 5px;
+            text-align: center;
+            .input-search{
+                width: 95%;
+                background-color: rgba(153, 153, 153, 0.8);
+                border: none;
+                color: rgb(102, 102, 102);
+                input{
+                    background-color: transparent;
+                    color: white;
+                }
+            }
+        }
         .div_collapse {
             height: 100%;
         }
@@ -73,6 +100,10 @@
                             margin-bottom: 5px;
                             color: black;
 
+                            span{
+                                margin-right: 5px;
+                            }
+
                             &:hover {
                                 color: #999;
                             }
@@ -97,6 +128,7 @@
 
 
 .chatWindow {
+    height: 100vh;
     .header_chat {
         display: flex;
         justify-content: space-between;
@@ -109,6 +141,11 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            .header_name-wrapper{
+                display: flex;
+                gap: 15px;
+                align-items: center;
+            }
             .name_header {
                 .header_title {
                     margin: 0;
@@ -154,6 +191,9 @@
         .list_message {
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
             list-style: none;
             max-height: 100%;
             height: fit-content;
@@ -171,6 +211,14 @@
                     align-items: flex-end;
                     .message{
                         justify-content: flex-end;
+                        .message_box {
+                            .message_user {
+                                flex-direction: row-reverse;
+                            }
+                            .message_wrapperText{
+                                flex-direction: row-reverse;
+                            }
+                        }
                     }
                 }
 
@@ -183,9 +231,14 @@
                     height: fit-content;
 
                     .message_box {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
                         max-width: 80%;
                         .message_user {
-
+                            display: flex;
+                            align-items: flex-end;
+                            gap: 5px;
                             .name_user {
                                 font-weight: bold;
                                 font-size: 16px;
@@ -197,17 +250,21 @@
                                 color: #494949;
                             }
                         }
-
-                        .message_text {
-                            background-color: #999;
-                            padding: 10px;
-                            border-radius: 35px;
-                            max-width: 100%;
-                            width: fit-content;
-                            .content_message {
-                                color: white;
-                                width: 100%;
-                                word-wrap: break-word;
+                        .message_wrapperText{
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+                            .message_text {
+                                background-color: #999;
+                                padding: 10px;
+                                border-radius: 35px;
+                                max-width: 100%;
+                                width: fit-content;
+                                .content_message {
+                                    color: white;
+                                    width: 100%;
+                                    word-wrap: break-word;
+                                }
                             }
                         }
                     }
@@ -216,10 +273,17 @@
         }
 
         .form_submit {
+            height: fit-content;
             max-height: 20%;
             .input_form {
                 flex: 1;
                 height: 100%;
+                .btn_submit{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    border: 1px solid #999;
+                }
                 textarea{
                     overflow: auto;
                     &::-webkit-scrollbar{
